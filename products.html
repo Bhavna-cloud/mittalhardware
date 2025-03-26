@@ -3,35 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - MITTAL Hardware</title>
+    <title>Our Products | MITTAL Hardware</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Top Bar and Navigation (same as index.html) -->
-    <!-- Copy the entire top bar and nav section from index.html -->
+    <!-- Header (Same as contact.html) -->
 
-    <!-- Products Section -->
-    <section class="products-section">
+    <!-- Page Heading -->
+    <section class="page-heading" style="background-image: url('assets/images/products-bg.jpg');">
         <div class="container">
-            <div class="section-heading">
-                <h2>Our Products</h2>
-            </div>
-            <div class="category-tabs">
-                <div class="category-tab active" data-category="all">All Products</div>
-                <div class="category-tab" data-category="paint">Paints</div>
-                <div class="category-tab" data-category="hardware">Hardware</div>
-                <div class="category-tab" data-category="sanitary">Sanitary</div>
-                <div class="category-tab" data-category="cement">Cement & Rebar</div>
-            </div>
-            <div class="product-grid">
-                <!-- Products will be loaded by JavaScript -->
-            </div>
+            <h1>Our Products</h1>
+            <p>Quality materials for all construction needs</p>
         </div>
+        <div class="overlay"></div>
     </section>
 
-    <!-- Footer (same as index.html) -->
-    <!-- Copy the entire footer section from index.html -->
+    <!-- Product Categories -->
+    <div class="container">
+        <div class="simple-product-grid">
+            <div class="product-category">
+                <h3><i class="fas fa-paint-roller"></i> Paints & Coatings</h3>
+                <ul class="product-list">
+                    <li>Asian Paints Royale</li>
+                    <li>Berger Weathercoat</li>
+                    <li>Nerolac Excel</li>
+                    <li>Dulux Velvet Touch</li>
+                </ul>
+            </div>
+            
+            <div class="product-category">
+                <h3><i class="fas fa-tools"></i> Hardware Tools</h3>
+                <ul class="product-list">
+                    <li>Bosch Power Tools</li>
+                    <li>Stanley Hand Tools</li>
+                    <li>Anchor Electricals</li>
+                    <li>Havells Wiring</li>
+                </ul>
+            </div>
+            
+            <div class="product-category">
+                <h3><i class="fas fa-bath"></i> Sanitary Ware</h3>
+                <ul class="product-list">
+                    <li>Jaquar Basins</li>
+                    <li>Hindware Commodes</li>
+                    <li>Parryware Taps</li>
+                    <li>Cera Sanitaryware</li>
+                </ul>
+            </div>
+            
+            <div class="product-category">
+                <h3><i class="fas fa-building"></i> Cement & Rebar</h3>
+                <ul class="product-list">
+                    <li>Ambuja Cement</li>
+                    <li>UltraTech Cement</li>
+                    <li>JSW Steel Rebar</li>
+                    <li>TMT Steel Bars</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
