@@ -1,107 +1,107 @@
-// Sample product data
+// Product Data
 const products = [
     {
         id: 1,
-        name: "Cordless Drill Driver",
-        price: 89.99,
-        originalPrice: 119.99,
-        image: "https://via.placeholder.com/300x300?text=Cordless+Drill",
-        rating: 4,
-        badge: "Sale"
+        name: "Asian Paints Royale",
+        price: 2499,
+        image: "https://images.unsplash.com/photo-1579027989534-ba459c1baf43",
+        category: "paint"
     },
     {
         id: 2,
-        name: "Adjustable Wrench Set",
-        price: 24.99,
-        originalPrice: 29.99,
-        image: "https://via.placeholder.com/300x300?text=Wrench+Set",
-        rating: 5,
-        badge: "Popular"
+        name: "Berger Paints",
+        price: 2199,
+        image: "https://images.unsplash.com/photo-1558640476-437a2b943732",
+        category: "paint"
     },
     {
         id: 3,
-        name: "Heavy Duty Hammer",
-        price: 15.99,
-        image: "https://via.placeholder.com/300x300?text=Hammer",
-        rating: 4
+        name: "Bosch Drill Machine",
+        price: 3499,
+        image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd",
+        category: "hardware"
     },
     {
         id: 4,
-        name: "Screwdriver Set",
-        price: 12.99,
-        originalPrice: 16.99,
-        image: "https://via.placeholder.com/300x300?text=Screwdriver+Set",
-        rating: 3,
-        badge: "Sale"
+        name: "Stanley Tool Kit",
+        price: 1999,
+        image: "https://images.unsplash.com/photo-1584735422182-6eafd36c57a2",
+        category: "hardware"
     },
     {
         id: 5,
-        name: "Measuring Tape",
-        price: 8.99,
-        image: "https://via.placeholder.com/300x300?text=Measuring+Tape",
-        rating: 4
+        name: "Jaquar Wash Basin",
+        price: 2999,
+        image: "https://images.unsplash.com/photo-1600566752225-3f0871d7cff6",
+        category: "sanitary"
     },
     {
         id: 6,
-        name: "Safety Glasses",
-        price: 5.99,
-        image: "https://via.placeholder.com/300x300?text=Safety+Glasses",
-        rating: 5
+        name: "Hindware Commode",
+        price: 5999,
+        image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+        category: "sanitary"
+    },
+    {
+        id: 7,
+        name: "Ambuja Cement",
+        price: 399,
+        image: "https://images.unsplash.com/photo-1611270632128-4c8d7b0b9b0a",
+        category: "cement"
+    },
+    {
+        id: 8,
+        name: "TMT Rebar",
+        price: 75,
+        image: "https://images.unsplash.com/photo-1581093196276-63559b5a3a8f",
+        category: "cement"
     }
 ];
 
 // DOM Elements
 const productGrid = document.querySelector('.product-grid');
 const cartCount = document.querySelector('.cart-count');
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+const categoryTabs = document.querySelectorAll('.category-tab');
+let currentCategory = 'all';
 
 // Cart functionality
 let cart = [];
 
-// Display products
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+    displayProducts();
+    setupEventListeners();
+    
+    // Highlight current page in navigation
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+
+// Display products based on category
 function displayProducts() {
     productGrid.innerHTML = '';
     
-    products.forEach(product => {
+    const filteredProducts = currentCategory === 'all' 
+        ? products 
+        : products.filter(product => product.category === currentCategory);
+    
+    filteredProducts.forEach(product => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         
-        let badge = '';
-        if (product.badge) {
-            badge = `<div class="product-badge">${product.badge}</div>`;
-        }
-        
-        let originalPrice = '';
-        if (product.originalPrice) {
-            originalPrice = `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>`;
-        }
-        
-        let stars = '';
-        for (let i = 1; i <= 5; i++) {
-            if (i <= product.rating) {
-                stars += '<i class="fas fa-star"></i>';
-            } else if (i - 0.5 <= product.rating) {
-                stars += '<i class="fas fa-star-half-alt"></i>';
-            } else {
-                stars += '<i class="far fa-star"></i>';
-            }
-        }
-        
         productCard.innerHTML = `
             <div class="product-image">
-                ${badge}
                 <img src="${product.image}" alt="${product.name}">
             </div>
             <div class="product-info">
                 <h3 class="product-title">${product.name}</h3>
-                <div class="product-price">
-                    <span class="current-price">$${product.price.toFixed(2)}</span>
-                    ${originalPrice}
-                </div>
-                <div class="product-rating">
-                    ${stars}
-                </div>
+                <div class="product-price">₹${product.price.toLocaleString()}</div>
                 <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
             </div>
         `;
@@ -144,7 +144,7 @@ function updateCartCount() {
 // Show notification when item is added to cart
 function showCartNotification(productName) {
     const notification = document.createElement('div');
-    notification.className = 'cart-notification';
+    notification.className = 'notification';
     notification.innerHTML = `
         <p>${productName} added to cart!</p>
     `;
@@ -163,37 +163,45 @@ function showCartNotification(productName) {
     }, 3000);
 }
 
-// Mobile menu toggle
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
-
-// Initialize the page
-document.addEventListener('DOMContentLoaded', () => {
-    displayProducts();
+// Setup event listeners
+function setupEventListeners() {
+    // Mobile menu toggle
+    document.querySelector('.hamburger')?.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('show');
+    });
     
-    // Add cart notification styles dynamically
+    // Category tabs
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            currentCategory = tab.dataset.category;
+            displayProducts();
+        });
+    });
+    
+    // Add notification styles dynamically
     const style = document.createElement('style');
     style.textContent = `
-        .cart-notification {
+        .notification {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: var(--secondary);
+            background: #27ae60;
             color: white;
             padding: 15px 25px;
             border-radius: 4px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             transform: translateY(100px);
             opacity: 0;
             transition: all 0.3s ease;
             z-index: 1000;
         }
         
-        .cart-notification.show {
+        .notification.show {
             transform: translateY(0);
             opacity: 1;
         }
     `;
     document.head.appendChild(style);
-});
+}
