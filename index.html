@@ -3,96 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MITTAL Hardware - Quality Hardware Solutions</title>
+    <title>MITTAL Hardware - Premium Hardware Solutions in Dera Bassi</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
         <div class="container">
-            <p>Quality | Growth | Prosperity</p>
-            <div class="contact-links">
+            <p><i class="fas fa-tag"></i> Special discounts on bulk orders this week!</p>
+            <div class="top-links">
                 <a href="tel:+919877269895"><i class="fas fa-phone"></i> +91 98772 69895</a>
-                <a href="https://wa.me/919877269895" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://wa.me/919877269895" target="_blank"><i class="fab fa-whatsapp"></i> Chat Now</a>
             </div>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Main Navigation -->
+    <header class="main-header">
         <div class="container">
-            <div class="logo">MITTAL Hardware</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="nav-icons">
-                <a href="https://www.instagram.com/mittalhardware1" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="cart"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
-                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hammer"></i></span>
+                <div class="logo-text">
+                    <span class="logo-main">MITTAL</span>
+                    <span class="logo-sub">HARDWARE</span>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-building"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-boxes"></i> Products</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="container">
-            <h1>Your Trusted Hardware Partner</h1>
-            <p>Quality products for all your construction needs</p>
-            <a href="products.html" class="btn">Shop Now</a>
+            <div class="hero-content">
+                <h1>Your Trusted Hardware Partner in Dera Bassi</h1>
+                <p class="hero-subtitle">Quality products for all your construction needs since 1995</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Explore Products <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="products-section">
+    <!-- Features Section -->
+    <section class="features-section">
         <div class="container">
-            <div class="section-heading">
-                <h2>Featured Products</h2>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-truck-fast"></i>
+                </div>
+                <h3>Fast Delivery</h3>
+                <p>Same day delivery in Dera Bassi area</p>
             </div>
-            <div class="product-grid">
-                <!-- Products will be loaded by JavaScript -->
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Quality Guaranteed</h3>
+                <p>Only genuine products from top brands</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-indian-rupee-sign"></i>
+                </div>
+                <h3>Best Prices</h3>
+                <p>Competitive rates guaranteed</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Expert Support</h3>
+                <p>25+ years of experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="section-header">
+            <h2>Our Product Categories</h2>
+            <p>Everything you need for your construction projects</p>
+        </div>
+        
+        <div class="container">
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('assets/images/paint-icon.jpg');">
+                    <div class="category-overlay"></div>
+                    <h3>Paints</h3>
+                </div>
+                <a href="#" class="btn btn-category">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('assets/images/hardware-icon.jpg');">
+                    <div class="category-overlay"></div>
+                    <h3>Hardware</h3>
+                </div>
+                <a href="#" class="btn btn-category">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('assets/images/sanitary-icon.jpg');">
+                    <div class="category-overlay"></div>
+                    <h3>Sanitary</h3>
+                </div>
+                <a href="#" class="btn btn-category">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('assets/images/cement-icon.jpg');">
+                    <div class="category-overlay"></div>
+                    <h3>Cement & Rebar</h3>
+                </div>
+                <a href="#" class="btn btn-category">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Trusted by homeowners and contractors in Dera Bassi</p>
+        </div>
+        
+        <div class="container">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"MITTAL Hardware has been my trusted supplier for all construction projects. Their quality and service is unmatched in Dera Bassi."</p>
+                <div class="testimonial-author">
+                    <div class="author-image" style="background-image: url('assets/images/customer1.jpg');"></div>
+                    <div class="author-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>Local Contractor</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"Excellent service and genuine products. They helped me select the perfect materials for my home renovation."</p>
+                <div class="testimonial-author">
+                    <div class="author-image" style="background-image: url('assets/images/customer2.jpg');"></div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>Homeowner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Visit our store in Dera Bassi or contact us for expert advice</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-light"><i class="fas fa-map-marker-alt"></i> Visit Store</a>
+                    <a href="tel:+919877269895" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
                 <div class="footer-col">
-                    <h3>MITTAL Hardware</h3>
-                    <p>Your trusted partner for quality hardware, paint, sanitary, cement and rebar.</p>
+                    <div class="footer-logo">
+                        <span class="logo-icon"><i class="fas fa-hammer"></i></span>
+                        <div class="logo-text">
+                            <span class="logo-main">MITTAL</span>
+                            <span class="logo-sub">HARDWARE</span>
+                        </div>
+                    </div>
+                    <p class="footer-about">Your trusted hardware partner in Dera Bassi for quality paints, hardware, sanitary, cement and rebar.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/mittalhardware1" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/919877269895" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
+                
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-col">
                     <h3>Products</h3>
                     <ul>
-                        <li><a href="products.html">Paints</a></li>
-                        <li><a href="products.html">Hardware</a></li>
-                        <li><a href="products.html">Sanitary</a></li>
-                        <li><a href="products.html">Cement & Rebar</a></li>
+                        <li><a href="#">Paints & Coatings</a></li>
+                        <li><a href="#">Hardware Tools</a></li>
+                        <li><a href="#">Sanitary Ware</a></li>
+                        <li><a href="#">Cement & Rebar</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-col">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Hardware Street, Delhi</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+919877269895">+91 98772 69895</a></p>
-                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919877269895">WhatsApp</a></p>
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Old Anaj Mandi, Mohan Nagar, Dera Bassi, Punjab 140507</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919877269895">+91 98772 69895</a></li>
+                        <li><i class="fas fa-envelope"></i> info@mittalhardware.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 8AM - 8PM | Sun: 10AM - 6PM</li>
+                    </ul>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 MITTAL Hardware. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 MITTAL Hardware. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> for Dera Bassi</p>
             </div>
         </div>
     </footer>
