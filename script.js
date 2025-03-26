@@ -1,39 +1,87 @@
-// Mobile Menu Toggle
-document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-    document.querySelector('.main-nav').classList.toggle('show');
-});
-
-// Smooth Scrolling for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Cart Functionality
-let cart = [];
+// ===== DOM Elements =====
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mainNav = document.querySelector('.main-nav');
+const cartBtn = document.querySelector('.cart-btn');
 const cartCount = document.querySelector('.cart-count');
+const searchBtn = document.querySelector('.search-btn');
+const productGrids = document.querySelectorAll('.product-grid, .product-list');
+const addToCartBtns = document.querySelectorAll('.add-to-cart');
 
+// ===== Global Variables =====
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// ===== Initialize =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Highlight current page in navigation
+    const currentPage = location.pathname.split('/').pop();
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Update cart count on page load
+    updateCartCount();
+    
+    // Initialize product interactions
+    if (productGrids.length > 0) {
+        initProductInteractions();
+    }
+});
+
+// ===== Mobile Menu =====
+mobileMenuBtn.addEventListener('click', function() {
+    mainNav.classList.toggle('show');
+    this.classList.toggle('open');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.main-nav') && !e.target.closest('.mobile-menu-btn')) {
+        mainNav.classList.remove('show');
+        mobileMenuBtn.classList.remove('open');
+    }
+});
+
+// ===== Cart Functionality =====
 function updateCartCount() {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     cartCount.textContent = totalItems;
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Add to Cart Functionality (for product pages)
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function() {
-        const productId = this.dataset.id;
-        // Add your cart logic here
-        cart.push({id: productId, quantity: 1});
-        updateCartCount();
-        showNotification('Item added to cart!');
+function initProductInteractions() {
+    // Add to cart functionality
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const productId = this.dataset.id;
+            const productName = this.dataset.name;
+            const productPrice = parseFloat(this.dataset.price);
+            
+            addToCart(productId, productName, productPrice);
+            showNotification(`${productName} added to cart!`);
+        });
     });
-});
+}
 
-// Notification System
+function addToCart(id, name, price) {
+    const existingItem = cart.find(item => item.id === id);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id,
+            name,
+            price,
+            quantity: 1
+        });
+    }
+    
+    updateCartCount();
+}
+
+// ===== Notification System =====
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
@@ -52,7 +100,14 @@ function showNotification(message) {
     }, 3000);
 }
 
-// Add notification styles
+// ===== Search Functionality =====
+searchBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Implement search functionality here
+    console.log('Search clicked');
+});
+
+// ===== Add styles for notification =====
 const style = document.createElement('style');
 style.textContent = `
     .notification {
@@ -74,10 +129,9 @@ style.textContent = `
         transform: translateY(0);
         opacity: 1;
     }
+    
+    .mobile-menu-btn.open i::before {
+        content: '\\f00d';
+    }
 `;
 document.head.appendChild(style);
-
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    updateCartCount();
-});
