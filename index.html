@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MITTAL Hardware - Your Trusted Hardware Store</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MITTAL Hardware - Premium Hardware Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:+919877269895"><i class="fas fa-phone"></i> +91 98772 69895</a>
+                <a href="https://wa.me/919877269895"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/mittalhardware1"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
         <div class="container">
             <div class="logo">
-                <h1>MITTAL HARDWARE</h1>
-                <p>Quality | Growth | Prosperity</p>
+                <div class="logo-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>MITTAL HARDWARE</h1>
+                    <p>Quality | Growth | Prosperity</p>
+                </div>
             </div>
-            <nav>
+            
+            <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -23,21 +44,81 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Your Trusted Hardware Partner</h2>
-            <p>Serving Dera Bassi since 1995 with quality products</p>
-            <a href="products.html" class="btn">View Products</a>
+            <div class="hero-content">
+                <h2>Your Trusted Hardware Partner</h2>
+                <p>Premium quality construction materials and tools in Dera Bassi</p>
+                <div class="cta-buttons">
+                    <a href="products.html" class="btn btn-primary">Our Products</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Fast Delivery</h3>
+                <p>Same day delivery in Dera Bassi area</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Quality Products</h3>
+                <p>Genuine brands with warranty</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rupee-sign"></i>
+                </div>
+                <h3>Best Prices</h3>
+                <p>Competitive market rates</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="main-footer">
         <div class="container">
+            <div class="footer-section">
+                <h3>MITTAL HARDWARE</h3>
+                <p>Old Anaj Mandi, Mohan Nagar<br>Dera Bassi, Punjab 140507</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> +91 98772 69895</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 8AM-8PM</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
             <p>&copy; 2023 MITTAL Hardware. All rights reserved.</p>
         </div>
     </footer>
